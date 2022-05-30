@@ -1,0 +1,43 @@
+<h1>Show Items</h1>
+
+<ul>
+
+  <li>
+    <strong>Crawled at:</strong>
+    <%= @items.crawled_at %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @items.title %>
+  </li>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @items.link %>
+  </li>
+
+  <li>
+    <strong>Thumbnail:</strong>
+    <%= @items.thumbnail %>
+  </li>
+
+  <li>
+    <strong>Number of episode:</strong>
+    <%= @items.number_of_episode %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @items.year %>
+  </li>
+
+  <li>
+    <strong>Full series:</strong>
+    <%= @items.full_series %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.items_path(@conn, :edit, @items) %></span> |
+<span><%= link "Back", to: Routes.items_path(@conn, :index) %></span>

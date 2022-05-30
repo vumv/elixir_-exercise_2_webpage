@@ -1,0 +1,40 @@
+<h1>Listing Item</h1>
+<p>CRAWL DATA FROM: VNPHIMMOI.COM</p>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Crawled at</th>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Thumbnail</th>
+      <th>Number of episode</th>
+      <th>Year</th>
+      <th>Full series</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for items <- @item do %>
+    <tr>
+      <td><%= items.crawled_at %></td>
+      <td><%= items.title %></td>
+      <td><%= items.link %></td>
+      <td><%= items.thumbnail %></td>
+      <td><%= items.number_of_episode %></td>
+      <td><%= items.year %></td>
+      <td><%= items.full_series %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.items_path(@conn, :show, items) %></span>
+        <span><%= link "Edit", to: Routes.items_path(@conn, :edit, items) %></span>
+ 
+        <span><%= link "Delete", to: Routes.items_path(@conn, :delete, items), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+ 
